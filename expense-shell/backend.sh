@@ -28,4 +28,4 @@ systemctl start backend
 
 
 dnf install mysql -y
-mysql -h mysql.rdevopsb72.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.roboshop.internal -uroot -pExpenseApp@1 < /app/schema/backend.sql
