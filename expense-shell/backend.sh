@@ -9,7 +9,7 @@ echo Add Application User
 useradd expense
 
 
-rm -rf /app
+rm -rf /app # to remove old files
 
 echo Copy Backend Service File
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
