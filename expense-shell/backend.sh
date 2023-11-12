@@ -20,7 +20,9 @@ npm install
 
 echo Start Backend Service
 systemctl daemon-reload
+
 systemctl enable backend
+
 systemctl start backend
 
 
