@@ -1,19 +1,33 @@
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+log_file=/tmp/backend.log
 
-dnf install nodejs -y
-cp backend.service /etc/systemd/system/backend.service
+echo install nodejs repos
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash >>$log_file
 
-useradd expense
+echo installing nodejs
+dnf install nodejs -y >>$log_file
+
+echo copy backend service file
+cp backend.service /etc/systemd/system/backend.service >>$log_file
+
+echo add aplication user
+useradd expense >>$log_file
+
+echo cleen app content
+rm -rf /app
+
 mkdir /app
-curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
+
+
+curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >>$log_file
 cd /app
-unzip /tmp/backend.zip
 
-npm install
+unzip /tmp/backend.zip >>$log_file
 
-systemctl daemon-reload
+npm install >>$log_file
+
+systemctl daemon-reload >>$log_file
 systemctl enable backend
 systemctl start backend
 
-dnf install mysql -y
-mysql -h mysql.roboshop.internal -uroot -pExpenseApp@1 < /app/schema/backend.sql
+dnf install mysql -y >>$log_file
+mysql -h mysql.roboshop.internal -uroot -pExpenseApp@1 < /app/schema/backend.sql >>$log_file
