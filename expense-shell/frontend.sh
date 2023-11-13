@@ -21,5 +21,5 @@ download_and_extract
 
 echo starting nginx server
 systemctl enable nginx
-systemctl restart nginxecho
+systemctl restart nginx
 echo $?
