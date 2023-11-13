@@ -20,14 +20,10 @@ stat_check
 
 echo add aplication user
 # useradd expense &>>$log_file
-
 id expense &>>$log_file
 if [ $? -ne 0 ]; then
-   echo "Add expense Application User"
    useradd expense &>>$log_file
-   stat_check
 fi
-
 stat_check
 
 
