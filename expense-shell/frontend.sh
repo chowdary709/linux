@@ -1,4 +1,5 @@
-log_file=/tmp/nginx.log
+source comman.sh
+
 echo installing nginx
 dnf install nginx -y >>$log_file
 
