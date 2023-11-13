@@ -12,10 +12,6 @@ download_and_extract() {
 
 }
 
-
-
-}
-
 stat_check() {
   if [ $? -eq 0 ]; then
     echo -e "\e[32mSUCCESS\e[0m"
