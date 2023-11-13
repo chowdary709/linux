@@ -1,1 +1,1 @@
-log_file=/tmp/backend.log
+log_file=/tmp/expense.log
