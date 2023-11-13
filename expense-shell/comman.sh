@@ -1,5 +1,14 @@
 log_file=/tmp/expense.log
 
+## how to chick exit status 
+stat_check() {
+  if [ $? -eq 0 ]; then
+    echo -e "\e[32mSUCCESS\e[0m"
+  else
+    echo -e "\e[31mFAILED\e[0m"
+    exit 1
+  fi
+}
 
 download_and_extract() {
  echo downloading $component code
@@ -10,13 +19,4 @@ download_and_extract() {
  unzip /tmp/$component.zip  &>>$log_file
  stat_check
 
-}
-
-stat_check() {
-  if [ $? -eq 0 ]; then
-    echo -e "\e[32mSUCCESS\e[0m"
-  else
-    echo -e "\e[31mFAILED\e[0m"
-    exit 1
-  fi
 }
