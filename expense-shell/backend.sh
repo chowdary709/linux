@@ -1,14 +1,16 @@
 source comman.sh
 component=backend
 
-echo install nodejs repos
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
+type npm  &>>$log_file
+if [ $? -ne 0 ]; then
+ echo install nodejs repos
+ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
+fi
 stat_check
 
-if [ $? -ne 0 ]; then
+
  echo installing nodejs
  dnf install nodejs -y &>>$log_file
-fi
 stat_check
 
 
