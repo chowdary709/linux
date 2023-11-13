@@ -21,6 +21,7 @@ echo download app content
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip >>$log_file
 
 
+
 cd /app
 
 echo export app content
