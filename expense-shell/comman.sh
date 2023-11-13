@@ -8,7 +8,7 @@ download_and_extract() {
  if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
 else
- echo -e "\e[33mFAILED\e[0m"
+ echo -e "\e[31mFAILED\e[0m"
 fi
 
  echo extracting $component code
@@ -17,6 +17,6 @@ fi
  if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
 else
- echo -e "\e[33mFAILED\e[0m"
+ echo -e "\e[31mFAILED\e[0m"
 fi
 }
