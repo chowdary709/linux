@@ -58,6 +58,8 @@ stat_check
 
 
 echo load the mysql schema
-mysql -h mysql.roboshop.internal -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
+mysql_root_password=$1 # standard variable
+mysql -h mysql.roboshop.internal -uroot -p$mysql_root_password < /app/schema/backend.sql &>>$log_file
 stat_check
 
+# ExpenseApp@1

@@ -22,5 +22,6 @@ stat_check
 
 
 echo setup root password
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$log_file
+mysql_root_password=$1
+mysql_secure_installation --set-root-pass $mysql_root_password &>>$log_file
 stat_check
