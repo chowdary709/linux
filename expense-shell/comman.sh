@@ -19,4 +19,5 @@ download_and_extract() {
  unzip /tmp/$component.zip  &>>$log_file
  stat_check
 
+
 }
